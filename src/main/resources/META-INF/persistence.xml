@@ -10,10 +10,9 @@
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.hbm2ddl.auto" value="update"></property>
-            <!--<property name="hbm2ddl.auto" value="validate"></property>-->
         </properties>
     </persistence-unit>
-<!--
+
    <persistence-unit name="testJpaUnit-test" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <properties>
@@ -22,5 +21,5 @@
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.hbm2ddl.auto" value="create-drop"></property>
         </properties>
-    </persistence-unit>-->
+    </persistence-unit>
 </persistence>
