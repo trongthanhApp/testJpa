@@ -1,5 +1,6 @@
 package fr.test.testJpa.repository;
 
+import fr.test.testJpa.model.Restaurant;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -10,12 +11,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.test.testJpa.model.Restaurant;
-
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({"classpath*:testJpa-dao-test-context.xml"})
+@ContextConfiguration({"classpath*:testJpa-dao-context-oracle.xml"})
 @Transactional
-public class RestaurantRepositoryTest {
+public class RestaurantRepositoryTestOracle {
 
 	@Autowired
 	private RestaurantRepository repo;
