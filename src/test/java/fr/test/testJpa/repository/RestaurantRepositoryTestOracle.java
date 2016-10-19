@@ -25,7 +25,6 @@ public class RestaurantRepositoryTestOracle {
 	@Test
 	public void testSaveOracle() {
 		Restaurant restaurant = new Restaurant();
-		restaurant.setId(1);
 		restaurant.setTitle("title1");
 
 		Restaurant restaurantSaved = repo.save(restaurant);
