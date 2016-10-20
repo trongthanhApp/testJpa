@@ -1,7 +1,6 @@
 package fr.test.testJpa.repository;
 
 import fr.test.testJpa.model.Restaurant;
-import fr.test.testJpa.repository.RestaurantRepository;
 
 import org.junit.*;
 import org.junit.runner.RunWith;
