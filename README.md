@@ -18,4 +18,6 @@ jdk jdk-8u101-windows-x64
 oracle OracleXE112_Win64
 sql sqldeveloper-4.1.5.21.78-x64
 
-
+-- insert Oracle sequence example
+insert INTO T_RESTAURANT(ID,NAME) VALUES (hibernate_sequence.NEXTVAL,'resto3');
+INSERT INTO T_MANAGER(ID, FIRST_NAME, LAST_NAME, ID_RESTAURANT) VALUES (hibernate_sequence.NEXTVAL, 'f2', 'tes2', 1);
