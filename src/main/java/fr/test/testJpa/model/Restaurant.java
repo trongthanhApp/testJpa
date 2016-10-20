@@ -9,24 +9,24 @@ public class Restaurant {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
-	private Integer id;
+	private Long id;
 
-	@Column(name = "title")
-	private String title;
-	
-	
-	public Integer getId() {
+	@Column(name = "name")
+	private String name;
+
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+
+	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getTitle() {
-		return title;
+
+	public String getName() {
+		return name;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	
-	
 }

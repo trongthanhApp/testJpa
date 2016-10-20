@@ -29,11 +29,11 @@ public class RestaurantRepositoryTest {
 	@Test
 	public void testSave() {
 		Restaurant restaurant = new Restaurant();
-		restaurant.setTitle("title1");
+		restaurant.setName("title1");
 
 		Restaurant restaurantSaved = repo.save(restaurant);
 		Assert.assertNotNull(restaurantSaved);
-		Assert.assertEquals("title1", restaurantSaved.getTitle());
+		Assert.assertEquals("title1", restaurantSaved.getName());
 	}
 
 }

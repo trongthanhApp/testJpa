@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 
 @Rollback(value = false)
-@Ignore
+/*@Ignore*/
 public class RestaurantRepositoryOracleTest {
 
 	@Autowired
@@ -23,11 +23,11 @@ public class RestaurantRepositoryOracleTest {
 	@Test
 	public void testSaveOracle() {
 		Restaurant restaurant = new Restaurant();
-		restaurant.setTitle("title1");
+		restaurant.setName("title1");
 
 		Restaurant restaurantSaved = repo.save(restaurant);
 		Assert.assertNotNull(restaurantSaved);
-		Assert.assertEquals("title1", restaurantSaved.getTitle());
+		Assert.assertEquals("title1", restaurantSaved.getName());
 
 	}
 

@@ -17,12 +17,12 @@ public class GenerateDdl {
 		properties.put("javax.persistence.schema-generation.scripts.drop-target", "target/scriptDrop.ddl");
 		
 		/*select driver database*/
-		/*properties.put("javax.persistence.jdbc.driver", "oracle.jdbc.OracleDriver");*/
-		properties.put("javax.persistence.jdbc.driver", "org.hsqldb.jdbc.JDBCDriver");
-
+		properties.put("javax.persistence.jdbc.driver", "oracle.jdbc.OracleDriver");
+		/*properties.put("javax.persistence.jdbc.driver", "org.hsqldb.jdbc.JDBCDriver");
+*/
 
 		/*select jpa unit*/
-		/*Persistence.generateSchema("testJpaUnitOracle", properties);*/
-		Persistence.generateSchema("testJpaUnit-test", properties);
+		Persistence.generateSchema("testJpaUnitOracle", properties);
+		/*Persistence.generateSchema("testJpaUnit-test", properties);*/
 	}
 }
