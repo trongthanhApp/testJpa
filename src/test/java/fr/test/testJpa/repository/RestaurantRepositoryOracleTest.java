@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 
 @Rollback(value = false)
-/*@Ignore*/
+@Ignore
 public class RestaurantRepositoryOracleTest {
 
 	@Autowired

@@ -21,7 +21,7 @@ public class Manager {
     @Column(name = "last_name")
     private String lastName;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_restaurant", unique = true, nullable = false)
     private Restaurant restaurant;
 
@@ -49,4 +49,14 @@ public class Manager {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
+
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
+	}
+    
+    
 }
