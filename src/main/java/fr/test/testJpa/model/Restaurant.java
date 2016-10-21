@@ -2,8 +2,7 @@ package fr.test.testJpa.model;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "T_RESTAURANT")
+@Entity(name = "T_RESTAURANT")
 public class Restaurant {
 
 	@Id

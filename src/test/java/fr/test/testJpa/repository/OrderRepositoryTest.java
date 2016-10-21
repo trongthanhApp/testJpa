@@ -2,8 +2,9 @@ package fr.test.testJpa.repository;
 
 import static org.junit.Assert.*;
 
-import java.util.Random;
-
+import fr.test.testJpa.model.Manager;
+import fr.test.testJpa.model.Order;
+import fr.test.testJpa.model.Restaurant;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,36 +13,32 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.test.testJpa.model.Manager;
-import fr.test.testJpa.model.Restaurant;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"/testJpa-dao-test-context.xml"})
 @Transactional
 
-public class ManagerRepositoryTest {
-	
+public class OrderRepositoryTest {
+
 	@Autowired
-	private ManagerRepository repo;
-	
+	private OrderRepository repo;
+
+	@Autowired
+	private RestaurantRepository restaurantRepository;
+
 	@Test
 	public void testSave() {
-		
-		Manager manager = new Manager();
-		
-		manager.setFirstName("firstName1");
-		manager.setLastName("lastName1");
 		Restaurant restaurant = new Restaurant();
-		restaurant.setName("restaurant" + Math.random());
-		
-		
-		manager.setRestaurant(restaurant );
-		
-		Manager managerSaved = repo.save(manager);
-		
-		assertEquals("firstName1", managerSaved.getFirstName());
-		assertEquals("lastName1", managerSaved.getLastName());
-		
+		restaurant.setName("RestaurantTest");
+
+		Order order1 = new Order();
+		order1.setTitle("Order1");
+		order1.setRestaurant(restaurant);
+
+		Order order1Saved = repo.save(order1);
+
+		Assert.assertEquals("Order1", order1Saved.getTitle());
+		Restaurant retaurantSaved = order1Saved.getRestaurant();
+		Assert.assertEquals("RestaurantTest", retaurantSaved.getName());
 	}
 
 }

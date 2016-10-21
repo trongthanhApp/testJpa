@@ -1,23 +1,26 @@
 
---DROP
-
- 
     drop table T_MANAGER cascade constraints;
+
+    drop table T_ORDER cascade constraints;
 
     drop table T_RESTAURANT cascade constraints;
 
     drop sequence hibernate_sequence;
 
-
---CREATE
-
- create sequence hibernate_sequence start with 1 increment by 1;
+    create sequence hibernate_sequence start with 1 increment by 1;
 
     create table T_MANAGER (
         id number(19,0) not null,
         first_name varchar2(255 char),
         last_name varchar2(255 char),
         id_restaurant number(19,0) not null,
+        primary key (id)
+    );
+
+    create table T_ORDER (
+        id number(19,0) not null,
+        title varchar2(255 char),
+        id_restaurant number(19,0),
         primary key (id)
     );
 
@@ -35,8 +38,7 @@
         foreign key (id_restaurant) 
         references T_RESTAURANT;
 
-
-
-
-
-
+    alter table T_ORDER 
+        add constraint FKs2beux8tioe4gchw7uiqq8k8u 
+        foreign key (id_restaurant) 
+        references T_RESTAURANT;
