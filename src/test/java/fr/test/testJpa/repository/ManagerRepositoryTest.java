@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,19 +24,21 @@ public class ManagerRepositoryTest {
 	
 	@Autowired
 	private ManagerRepository repo;
+
+	@Autowired
+	private RestaurantRepository restaurantRepository;
 	
 	@Test
 	public void testSave() {
-		
-		Manager manager = new Manager();
-		
-		manager.setFirstName("firstName1");
-		manager.setLastName("lastName1");
+
 		Restaurant restaurant = new Restaurant();
 		restaurant.setName("restaurant" + Math.random());
-		
-		
-		manager.setRestaurant(restaurant );
+		Restaurant restaurantSaved = restaurantRepository.save(restaurant);
+
+		Manager manager = new Manager();
+		manager.setFirstName("firstName1");
+		manager.setLastName("lastName1");
+		manager.setRestaurant(restaurantSaved);
 		
 		Manager managerSaved = repo.save(manager);
 		

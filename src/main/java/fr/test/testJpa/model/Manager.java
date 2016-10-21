@@ -21,7 +21,7 @@ public class Manager {
     @Column(name = "last_name")
     private String lastName;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "id_restaurant", unique = true, nullable = false)
     private Restaurant restaurant;
 

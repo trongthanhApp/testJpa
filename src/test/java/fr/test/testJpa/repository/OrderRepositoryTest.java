@@ -9,6 +9,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,16 +30,16 @@ public class OrderRepositoryTest {
 	public void testSave() {
 		Restaurant restaurant = new Restaurant();
 		restaurant.setName("RestaurantTest");
+		Restaurant restaurantSaved = restaurantRepository.save(restaurant);
 
 		Order order1 = new Order();
 		order1.setTitle("Order1");
-		order1.setRestaurant(restaurant);
+		order1.setRestaurant(restaurantSaved);
 
 		Order order1Saved = repo.save(order1);
 
 		Assert.assertEquals("Order1", order1Saved.getTitle());
-		Restaurant retaurantSaved = order1Saved.getRestaurant();
-		Assert.assertEquals("RestaurantTest", retaurantSaved.getName());
+		Assert.assertEquals("RestaurantTest", order1Saved.getRestaurant().getName());
 	}
 
 }
