@@ -22,7 +22,7 @@ public class Manager {
     private String lastName;
 
     @OneToOne
-    @JoinColumn(name = "restaurant_id", unique = true, nullable = false, foreignKey = @ForeignKey(name = "RESTAURANT_ID_FK"))
+    @JoinColumn(name = "restaurant_id", unique = true, nullable = false, foreignKey = @ForeignKey(name = "MANAGER_RESTAURANT_ID_FK"))
     private Restaurant restaurant;
 
 

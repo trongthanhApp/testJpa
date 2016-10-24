@@ -14,7 +14,7 @@ public class Order {
     private String title;
 
     @ManyToOne
-    @JoinColumn(name = "restaurant_id", foreignKey = @ForeignKey(name = "RESTAURANT_ID_FK"))
+    @JoinColumn(name = "restaurant_id", foreignKey = @ForeignKey(name = "ORDER_RESTAURANT_ID_FK"))
     private Restaurant restaurant;
 
     public Long getId() {

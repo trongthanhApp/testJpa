@@ -25,11 +25,11 @@ create sequence hibernate_sequence start with 1 increment by 1;
         add constraint UK_clksxwt9uo8mfxqfbaqe6pvsq unique (restaurant_id);
 
     alter table T_MANAGER
-        add constraint RESTAURANT_ID_FK
+        add constraint MANAGER_RESTAURANT_ID_FK
         foreign key (restaurant_id)
         references T_RESTAURANT;
 
     alter table T_ORDER
-        add constraint RESTAURANT_ID_FK
+        add constraint ORDER_RESTAURANT_ID_FK
         foreign key (restaurant_id)
         references T_RESTAURANT;
