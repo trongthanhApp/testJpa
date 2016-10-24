@@ -20,4 +20,4 @@ sql sqldeveloper-4.1.5.21.78-x64
 
 -- insert Oracle sequence example
 insert INTO T_RESTAURANT(ID,NAME) VALUES (hibernate_sequence.NEXTVAL,'resto3');
-INSERT INTO T_MANAGER(ID, FIRST_NAME, LAST_NAME, ID_RESTAURANT) VALUES (hibernate_sequence.NEXTVAL, 'f2', 'tes2', 1);
+INSERT INTO T_MANAGER(ID, FIRST_NAME, LAST_NAME, RESTAURANT_ID) VALUES (hibernate_sequence.NEXTVAL, 'f2', 'tes2', 1);
