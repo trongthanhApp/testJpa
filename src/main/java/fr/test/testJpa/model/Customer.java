@@ -19,6 +19,11 @@ public class Customer {
     private String lastName;
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(name = "T_ASSO_CUSTOMER_ORDER",
+            joinColumns =
+            @JoinColumn(name="customer_id", referencedColumnName="ID", foreignKey = @ForeignKey(name = "ASSO_CUST_ORD_CUSTOMER_ID_FK")),
+            inverseJoinColumns=
+            @JoinColumn(name="order_id", referencedColumnName="ID", foreignKey = @ForeignKey(name = "ASSO_CUST_ORD_ORDER_ID_FK")))
     private List<Order> orders = new ArrayList<>();
     
     public Customer(){}

@@ -54,7 +54,6 @@ public class CustomerRepositoryTest {
 		assertEquals("ln1", customer1Saved.getLastName());
 
 		idCustomer = customer1Saved.getId();
-		System.out.println("test");
 	}
 
 	@Test
