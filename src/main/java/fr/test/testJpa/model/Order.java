@@ -16,6 +16,12 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "restaurant_id", foreignKey = @ForeignKey(name = "ORDER_RESTAURANT_ID_FK"))
     private Restaurant restaurant;
+    
+    public Order() {}
+
+    public Order(String title) {
+        this.title = title;
+    }
 
     public Long getId() {
         return id;
