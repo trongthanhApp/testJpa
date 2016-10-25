@@ -18,7 +18,7 @@ public class Customer {
     @Column(name = "lastName")
     private String lastName;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Order> orders = new ArrayList<>();
     
     public Customer(){}
