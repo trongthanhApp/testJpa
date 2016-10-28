@@ -25,8 +25,11 @@
 
     <jpa:repositories base-package="fr.test.testJpa.repository"></jpa:repositories>
 
-    <context:annotation-config></context:annotation-config>
+    <!--<context:annotation-config></context:annotation-config>
 
-    <tx:annotation-driven ></tx:annotation-driven>
+    <tx:annotation-driven ></tx:annotation-driven>-->
 
+    <jdbc:initialize-database data-source="dataSource">
+        <jdbc:script location="classpath:data/data.sql"/>
+    </jdbc:initialize-database>
 </beans>
