@@ -22,4 +22,8 @@
 
     <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
 
+    <jdbc:initialize-database data-source="dataSource">
+        <jdbc:script location="classpath:data/data.sql"/>
+    </jdbc:initialize-database>
+
 </beans>
