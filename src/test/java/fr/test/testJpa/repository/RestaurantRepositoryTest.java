@@ -1,5 +1,6 @@
 package fr.test.testJpa.repository;
 
+import fr.test.testJpa.model.Order;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +10,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import fr.test.testJpa.model.Restaurant;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"classpath*:testJpa-dao-test-context.xml"})
@@ -45,6 +48,14 @@ public class RestaurantRepositoryTest {
 		Optional<String> restaurantName = repo.findNameById(5000L);
 
 		assertEquals("resto1", restaurantName.get());
+	}
+
+	@Test
+	public void testFindOrdersByRestaurantId() {
+		List<Order> orders = repo.findOrdersByRestaurantId(5000L);
+
+		assertNotNull(orders);
+		assertEquals(3, orders.size());
 	}
 
 }
