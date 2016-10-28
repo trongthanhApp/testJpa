@@ -2,6 +2,7 @@ package fr.test.testJpa.repository;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
 import java.util.Random;
 
 import org.junit.Assert;
@@ -46,5 +47,19 @@ public class ManagerRepositoryTest {
 		assertEquals("lastName1", managerSaved.getLastName());
 		
 	}
+
+	@Test
+	public void testAddRestaurantExist() {
+		Restaurant restaurant = restaurantRepository.getOne(5000L);
+
+		Manager manager2 = new Manager("fn2", "ln2", restaurant);
+        Manager managerSaved = repo.save(manager2);
+
+        Manager managerFound = repo.getOne(managerSaved.getId());
+
+        assertEquals("fn2", managerSaved.getFirstName());
+        assertEquals("ln2", managerSaved.getLastName());
+    }
+
 
 }
