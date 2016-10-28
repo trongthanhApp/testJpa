@@ -20,6 +20,6 @@
 
     <context:annotation-config></context:annotation-config>
 
-    <tx:annotation-driven ></tx:annotation-driven>
+    <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
 
 </beans>
