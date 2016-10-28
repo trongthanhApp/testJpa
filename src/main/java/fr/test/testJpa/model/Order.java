@@ -2,7 +2,8 @@ package fr.test.testJpa.model;
 
 import javax.persistence.*;
 
-@Entity(name = "T_ORDER")
+@Entity
+@Table(name = "T_ORDER")
 public class Order {
 
     @Id

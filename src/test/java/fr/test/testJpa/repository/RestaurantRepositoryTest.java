@@ -9,6 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import fr.test.testJpa.model.Restaurant;
 
+import java.util.Optional;
+
+import static org.junit.Assert.assertEquals;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"classpath*:testJpa-dao-test-context.xml"})
 @Transactional
@@ -33,7 +37,14 @@ public class RestaurantRepositoryTest {
 
 		Restaurant restaurantSaved = repo.save(restaurant);
 		Assert.assertNotNull(restaurantSaved);
-		Assert.assertEquals("title1", restaurantSaved.getName());
+		assertEquals("title1", restaurantSaved.getName());
+	}
+
+	@Test
+	public void testFindNameById() {
+		Optional<String> restaurantName = repo.findNameById(5000L);
+
+		assertEquals("resto1", restaurantName.get());
 	}
 
 }

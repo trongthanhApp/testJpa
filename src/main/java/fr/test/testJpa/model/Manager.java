@@ -7,7 +7,8 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.UUID;
 
-@Entity(name = "T_MANAGER")
+@Entity
+@Table(name = "T_MANAGER")
 public class Manager {
 
     @Id
